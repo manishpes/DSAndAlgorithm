@@ -1,0 +1,8 @@
+
+0
+java:S1220""Move this file to a named package.
+W
+java:S1854"5Remove this useless assignment to local variable "l".(¦Á¥™øÿÿÿÿ8ÀÔ¦Ã“/
+H
+java:S1481"&Remove this unused "l" local variable.(¦Á¥™øÿÿÿÿ8ÀÔ¦Ã“/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ž½Ž¦ÿÿÿÿÿ
