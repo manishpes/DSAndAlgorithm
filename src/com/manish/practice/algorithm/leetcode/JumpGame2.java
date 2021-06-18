@@ -1,0 +1,44 @@
+package com.manish.practice.algorithm.leetcode;
+
+import java.util.Arrays;
+import java.util.Map;
+
+public class JumpGame2 {
+
+    public static int JumpGame2No(int []nums)
+    {
+        /*int n = nums.length;
+        int [] dp = new  int [n];
+        Arrays.fill(dp, Integer.MAX_VALUE -1);
+        dp[n-1] = 0;
+        for(int i = n-2; i >=0; i--)
+        {
+            for(int j = i+1; j<= i+nums[i] ; j++)
+            {
+                if(j>=n)
+                    break;
+                dp[i] = Math.min(dp[i], 1+dp[j]);
+            }
+        }
+        return dp[0];*/
+
+        int jumps = 0;
+        int farthest = 0;
+        int current_end = 0;
+        for(int i=0;i<nums.length-1;i++) {
+            farthest = Math.max(farthest,nums[i]+i);
+            if(current_end==i)
+            {
+                jumps++;
+                current_end = farthest;
+            }
+        }
+        return jumps;
+    }
+
+    public static void main(String[] args) {
+        int arr [] = new int[] {2,2,1,1,4,1};
+        System.out.println(JumpGame2No(arr));
+    }
+
+}
