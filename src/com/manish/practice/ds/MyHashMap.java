@@ -28,12 +28,12 @@ public class MyHashMap {
 
 }
 
-class Entry {
-    int key;
-    int value;
+class Entry <K, V>{
+    final K key;
+    V value;
     Entry next;
 
-    Entry(int key, int value) {
+    Entry(K key, V value) {
         this.key = key;
         this.value = value;
         this.next = null;
@@ -49,10 +49,10 @@ class Entry {
     }
 }
 
-class HashMap {
+class HashMap <K, V>{
 
     int SIZE = 16;
-    Entry myHashMapEntry[];
+    Entry <K, V>myHashMapEntry[];
 
     public HashMap() {
     }
@@ -63,16 +63,16 @@ class HashMap {
     }
 
 
-    public void put(Integer key, Integer value) {
+    public void put(K key, V value) {
 
-        Entry newEntry = new Entry(key, value);
+        Entry <K, V> newEntry = new Entry(key, value);
         int hash = key.hashCode() % SIZE;
         Entry entry = myHashMapEntry[hash];
         if (entry == null) {
             myHashMapEntry[hash] = newEntry;
         } else {
             while (entry.next != null) {
-                if (entry.key == key) {
+                if (entry.key.equals(key)) { //collision
                     entry.value = value;
                     return;
                 }
@@ -82,22 +82,22 @@ class HashMap {
         }
     }
 
-    public Integer get(Integer key) {
+    public V get(K key) {
         int hash = key.hashCode() % SIZE;
-        Entry entry = myHashMapEntry[hash];
-        while (entry != null && entry.key != key) {
+        Entry<K, V> entry = myHashMapEntry[hash];
+        while (entry != null && !entry.key.equals(key)) {
             entry = entry.next;
         }
         return entry != null ? entry.value : null;
     }
 
-    public boolean delete(Integer key) {
+    public boolean delete(K key) {
 
         int hash = key.hashCode() % SIZE;
         Entry entry = myHashMapEntry[hash];
 
         Entry curr = entry, prev = null;
-        while (curr != null && curr.key != key) // find the node to delete
+        while (curr != null && !curr.key.equals(key)) // find the node to delete
         {
             prev = curr;
             curr = curr.next;
