@@ -2,9 +2,7 @@ package com.manish.practice.ds.Graph;
 
 import jdk.nashorn.internal.runtime.regexp.joni.constants.Traverse;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class BFS {
 
@@ -27,7 +25,7 @@ public class BFS {
     }
     public void BFSTraversal(int v)
     {
-        LinkedList <Integer> queue = new LinkedList<>();
+        Queue <Integer> queue = new LinkedList<>();
         boolean visited [] = new boolean [V];
         visited[v]= true;
         queue.add(v);

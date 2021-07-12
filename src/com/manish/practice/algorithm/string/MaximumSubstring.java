@@ -11,18 +11,17 @@ public class MaximumSubstring {
         int i = 0, j =0;
         int n = s.length();
 
-//        while(i<n) {
-            count[s.charAt(i)-97] = true;
+            count[s.charAt(i)- 'a'] = true;
             j = 0;
             while (j != n-1) {
-                if(!count[s.charAt(j+1)-97])
+                if(!count[s.charAt(j+1)-'a'])
                 {
                     j++;
-                    count[s.charAt(j)-97] = true;
+                    count[s.charAt(j)-'a'] = true;
                      max = Math.max(j - i + 1,max);
                 }else
                     {
-                    count[s.charAt(i)-97] = false;
+                    count[s.charAt(i)-'a'] = false;
                     i++;
                 }
             }
@@ -41,12 +40,11 @@ public class MaximumSubstring {
 
         LinkedHashMap<Character, Integer> charPosMap = new LinkedHashMap<>();
         for (int i = 0; i < charArray.length; i++) {
-            System.out.println(i);
+          //  System.out.println(i);
             char ch = charArray[i];
             if (!charPosMap.containsKey(ch)) {
                 charPosMap.put(ch, i);
             } else {
-//               i = charPosMap.get(ch);
                 charPosMap.clear();
             }
             if(charPosMap.size()>maxLen) {
@@ -58,7 +56,7 @@ public class MaximumSubstring {
 
     public static void main(String[] args) {
         System.out.println(maximumSubString("maniashaxyktew"));
-        nonRepeatingSubstring("maniashaxyktew");
+        nonRepeatingSubstring("maamanishabcdefghijklmno");
         System.out.println(maxLen +"  "+longestString );
     }
 }

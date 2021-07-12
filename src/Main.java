@@ -4,7 +4,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        List<Integer> l = new ArrayList<>();
+        String [] in = new String [2];
+//        in = "2 3".split(" ");
+        int n = Integer.parseInt(in[0]);
+        System.out.println(in[0] + "" +in[1]+"  "+ n);
+
     }
 }
