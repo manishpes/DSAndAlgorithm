@@ -33,11 +33,11 @@ public class BFS {
            v = queue.poll();
            System.out.print(v+  "  " );
            List <Integer> edge = adj[v];
-           for(int i= 0; i <edge.size(); i++)
+           for(int i : edge)
            {
-            if(!visited[edge.get(i)]) {
-                visited[edge.get(i)] = true;
-                queue.add(edge.get(i));
+            if(!visited[i]) {
+                visited[i] = true;
+                queue.add(i);
              //   System.out.println(edge.get(i));
             }
            }

@@ -24,6 +24,7 @@ public class MyPriortiyQueue {
     public int peek(PriorityQueue head){
         return head.data;
     }
+
     public PriorityQueue pop(){
         PriorityQueue pq = head;
         head = head.next;

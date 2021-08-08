@@ -3,7 +3,7 @@ package com.manish.practice.algorithm.array;
 class Solution {
     public static boolean judgeSquareSum(int c) {
         
-        for(int i = 0; i*i <= Math.sqrt(c);i++)
+        for(int i = 0; i <= Math.sqrt(c);i++)
         {
             
             if(Math.sqrt(c- i*i) == Math.floor(Math.sqrt(c- i*i)))

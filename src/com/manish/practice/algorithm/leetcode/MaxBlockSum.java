@@ -22,7 +22,7 @@ class MaxBlockSum {
                     if(right < c)
                         ans[i+x][right] -= mat[i][j];
 //                    System.out.println(mat[i][j]+"  ans array x is "+x +"  " + (i+x) +"" +  left+"  "+ (i+x)+right);
-                    printArray(ans);
+                  //  printArray(ans);
                     System.out.println();
                 }
              }

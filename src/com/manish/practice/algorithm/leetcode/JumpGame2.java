@@ -7,21 +7,28 @@ public class JumpGame2 {
 
     public static int JumpGame2No(int []nums)
     {
-        /*int n = nums.length;
+        int n = nums.length;
+        int k = 4;
         int [] dp = new  int [n];
         Arrays.fill(dp, Integer.MAX_VALUE -1);
-        dp[n-1] = 0;
-        for(int i = n-2; i >=0; i--)
+        dp[0] = 1;
+        for(int i = 0; i <n; i++)
         {
-            for(int j = i+1; j<= i+nums[i] ; j++)
-            {
-                if(j>=n)
-                    break;
-                dp[i] = Math.min(dp[i], 1+dp[j]);
+            if(nums[i] != 0){
+                for(int j = i+1; j<= i+k ; j++)
+                {
+                    if(j>=n)
+                        break;
+                    dp[j] = Math.min(dp[j], 1+dp[i]);
+                }
             }
         }
-        return dp[0];*/
-
+        if(dp[n-1]== Integer.MAX_VALUE || dp[n-1] == Integer.MAX_VALUE-1)
+        {
+            return -1;
+        }
+        return dp[n-1];
+/*
         int jumps = 0;
         int farthest = 0;
         int current_end = 0;
@@ -33,11 +40,12 @@ public class JumpGame2 {
                 current_end = farthest;
             }
         }
-        return jumps;
+        return jumps;*/
     }
 
     public static void main(String[] args) {
         int arr [] = new int[] {2,2,1,1,4,1};
+        System.out.println(arr.length);
         System.out.println(JumpGame2No(arr));
     }
 
