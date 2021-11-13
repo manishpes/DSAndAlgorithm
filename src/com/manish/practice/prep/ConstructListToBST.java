@@ -65,6 +65,7 @@ public class ConstructListToBST {
 //        Tree root = cbst.constructTree(list, 0, list.size()-1 );
         Index index = new Index();
         Tree root = cbst.sortedListToBSTRecur(list, list.size(), index );
+        System.out.println(root.data);
         cbst.inOrder(root);
     }
 }

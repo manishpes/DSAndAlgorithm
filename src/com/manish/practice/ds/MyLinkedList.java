@@ -1,5 +1,8 @@
 package com.manish.practice.ds;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class MyLinkedList {
    Node head = null;
    Node tail = null;
@@ -94,6 +97,7 @@ public class MyLinkedList {
         add(list, 3);
         prePend(list, 0);
         printList(list);
+        List<Integer> lis = new LinkedList<>();
 
     }
 

@@ -1,4 +1,4 @@
-public class Deadlock {
+public class Testing {
     public static void main(String[] args) {
         Thread t1 ;
         Thread t2 ;
@@ -31,20 +31,18 @@ public class Deadlock {
        t2 = new Thread(){
 
            public void run() {
-            synchronized (obj2)
-            {
+            synchronized (obj2) {
                 try {
                     System.out.println("Thread 2 locked resource 2");
                     Thread.sleep(100);
-                } catch(Exception e){
+                } catch (Exception e) {
 
                 }
-            }
-            synchronized (obj1)
-            {
-                System.out.println("Thread 2 locked resource 1");
-            }
 
+                synchronized (obj1) {
+                    System.out.println("Thread 2 locked resource 1");
+                }
+            }
 
            }
        };

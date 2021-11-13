@@ -31,9 +31,15 @@ public class CountPrimeLToR {
                 prefixSum[i]++;
         }
 
-        return prefixSum[L] - prefixSum[R];
+        return prefixSum[R] - prefixSum[L];
 
 
 
+    }
+
+    public static void main(String[] args) {
+        CountPrimeLToR primeLToR = new CountPrimeLToR();
+        int count = primeLToR.primeNumber(1,10);
+        System.out.println(count);
     }
 }

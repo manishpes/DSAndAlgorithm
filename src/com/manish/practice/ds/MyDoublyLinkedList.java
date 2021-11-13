@@ -2,9 +2,9 @@ package com.manish.practice.ds;
 
 public class MyDoublyLinkedList {
 
-    static Node head = null;
-    static int size = 0;
-    static class Node
+    Node head = null;
+    int size = 0;
+    class Node
     {
         int data;
         Node prev;
@@ -16,7 +16,7 @@ public class MyDoublyLinkedList {
             this.next = null;
         }
     }
-    public static Node add(int value )
+    public  Node add(int value )
     {
         Node element = null;
         if(head == null){
@@ -37,23 +37,30 @@ public class MyDoublyLinkedList {
         size++;
         return element;
     }
-    public static Node remove(int index )
+    public  Node remove(int index )
     {
         Node element = null;
             Node temp  = head;
             int i = 0;
-            while( i != index - 1)
+           if(index == 0){
+                head = head.next;
+                head.prev = null;
+                return head;
+            }
+            while( i != index-1)
             {
                 temp = temp.next;
+                i++;
             }
-            element = temp.next;
+           element = temp.next;
             temp.next = element.next;
-            element.next.prev = temp;
-
+            if (element.next != null) {
+                element.next.prev = temp;
+            }
         size--;
         return element;
     }
-    public static void print()
+    public void print()
     {
         Node temp = head;
         while(temp != null)
@@ -64,9 +71,17 @@ public class MyDoublyLinkedList {
     }
 
     public static void main(String[] args) {
-        add(1);
-        add(2);
-        add(3);
-        print();
+        MyDoublyLinkedList dll = new MyDoublyLinkedList();
+        dll.add(1);
+        dll.add(2);
+        dll.add(3);
+        dll.remove(1);
+        dll.print();
+        System.out.println();
+        MyDoublyLinkedList dll2 = new MyDoublyLinkedList();
+        dll2.add(4);
+        dll2.add(5);
+        dll2.add(6);
+        dll2.print();
     }
 }

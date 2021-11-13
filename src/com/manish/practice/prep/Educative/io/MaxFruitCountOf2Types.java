@@ -9,6 +9,7 @@ class MaxFruitCountOf2Types {
             Map<Character, Integer> map = new HashMap<>();
             int size = arr.length;
             int start = 0;
+
             int end = 0;
             int maxLen = Integer.MIN_VALUE;
             for(end = 0; end < size ; end++){

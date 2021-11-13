@@ -29,7 +29,7 @@ public class MyHashMap {
 }
 
 class Entry <K, V>{
-    final K key;
+    K key;
     V value;
     Entry next;
 
@@ -55,6 +55,7 @@ class HashMap <K, V>{
     Entry <K, V>myHashMapEntry[];
 
     public HashMap() {
+        myHashMapEntry = new Entry[SIZE];
     }
 
     public HashMap(int size) {

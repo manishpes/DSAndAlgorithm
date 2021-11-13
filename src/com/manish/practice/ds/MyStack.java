@@ -11,26 +11,26 @@ public class MyStack {
         }
     }
 
-    public static MyStack push(MyStack stack, int value){
+    public  void push(int value){
         Node element = new Node(value);
-        if(stack.top == null)
+        if(top == null)
         {
-            stack.top = element;
+            top = element;
         }else{
-            element.next = stack.top;
-            stack.top = element;
+            element.next = top;
+            top = element;
         }
-        return stack;
+        //return stack;
     }
 
-    public static Node pop(MyStack stack){
+    public Node pop(){
         Node element = null;
-        if(stack.top == null)
+        if(top == null)
         {
-            return stack.top;
+            return top;
         }else{
-            element = stack.top;
-            stack.top = element.next;
+            element = top;
+            top = element.next;
         }
         return element;
     }
@@ -49,16 +49,17 @@ public class MyStack {
 
     public static void main(String[] args) {
         MyStack stack = new MyStack();
-        push(stack, 1);
-        push(stack, 2);
-        push(stack, 3);
-        push(stack, 4);
-        push(stack, 5);
-        System.out.println(pop(stack).data);
+        stack.pop();
+        stack.push( 1);
+        stack.push( 2);
+        stack.push(3);
+        stack.push( 4);
+        stack.push( 5);
+        System.out.println(stack.pop().data);
         while(stack.top != null)
         {
             System.out.print(stack.top.data+", ");
-            stack.pop(stack);
+            stack.pop();
         }
         System.out.println("\nTop");
         System.out.println(peek(stack));

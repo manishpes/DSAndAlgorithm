@@ -59,7 +59,8 @@ public class AddTwoNumber {
         }
     if(carry != 0)
         curr.next = new ListNode(carry);
-        return result.next;
+
+    return result.next;
     }
 
     private void print(ListNode l3){

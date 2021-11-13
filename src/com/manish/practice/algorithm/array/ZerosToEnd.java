@@ -56,7 +56,6 @@ public class ZerosToEnd {
     {
 
         int n = arr.length;
-        int res[] = new int[n];
         int count =0;
         for(int i=0; i< n;i++){
 
